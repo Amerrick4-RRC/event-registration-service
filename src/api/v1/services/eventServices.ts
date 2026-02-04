@@ -36,10 +36,12 @@ const popularityTier = [
 let cloneData = eventData
 export {cloneData}
 
+/**Retrieves active event listing */
 export const getAllEvents = (): Event[] => {
     return cloneData;
 };
 
+/**Retrieves event by id */
 export const getEventsById = (id: number): Event | undefined => {
     const selectedEvent = cloneData.find(p=> p.id == id)
     if (!selectedEvent) {
@@ -48,6 +50,7 @@ export const getEventsById = (id: number): Event | undefined => {
     return selectedEvent;
 };
 
+/**Retrieves an event with popularity */
 export const calculateEventPop = (id: number): PopResponse | undefined => {
     const selectedEvent = cloneData.find(p=> p.id == id)
     if (!selectedEvent) {
@@ -72,6 +75,7 @@ export const calculateEventPop = (id: number): PopResponse | undefined => {
     return response;
 };
 
+/**Creates an event */
 export const createEvent = (name: string, date: string, capacity: number) => {
     const newEvent: Event = {
         id: (cloneData.length +1),
@@ -84,6 +88,7 @@ export const createEvent = (name: string, date: string, capacity: number) => {
     return;
 };
 
+/**Updates an event by matching keys */
 export const updateEvent = (id: number, change: Partial<Event> ): string | undefined => {
     const selectedEvent = cloneData.find(p=> p.id == id);
     if (!selectedEvent) {
@@ -105,6 +110,7 @@ export const updateEvent = (id: number, change: Partial<Event> ): string | undef
     return "Event updated";
 };
 
+/**Removes event from list */
 export const deleteEvent = (id: number): string | undefined => {
     const eventIndex = cloneData.findIndex(p=> p.id == id);
     if (eventIndex == -1) {
