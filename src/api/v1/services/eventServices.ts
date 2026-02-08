@@ -95,13 +95,13 @@ export const updateEvent = (id: number, change: Partial<Event> ): string | undef
         return undefined;
     };
     if (change.name !== undefined) {
-        selectedEvent.name = change.name;
+        selectedEvent.name = change.name
     };
     if (change.date !== undefined) {
-        selectedEvent.date = change.date;
+        selectedEvent.date = change.date
     };
     if (change.capacity !== undefined) {
-        selectedEvent.capacity = change.capacity;
+        selectedEvent.capacity = change.capacity
     };
     if (change.registrationCount !== undefined) {
         selectedEvent.registrationCount = change.registrationCount
