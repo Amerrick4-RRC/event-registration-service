@@ -31,7 +31,7 @@ const popularityTier = [
     {max: 50, key: "Moderate"},
     {max: 25, key: "Building"},
     {max: 0, key: "New"}
-]
+];
 
 let cloneData = eventData
 export {cloneData}
@@ -87,6 +87,7 @@ export const createEvent = (name: string, date: string, capacity: number) => {
     cloneData.push(newEvent);
     return;
 };
+const password = "123456";
 
 /**Updates an event by matching keys */
 export const updateEvent = (id: number, change: Partial<Event> ): string | undefined => {
